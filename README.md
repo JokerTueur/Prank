@@ -1,1 +1,1 @@
-Make soma prank (i try :p)
+Make some prank (i try :p)
