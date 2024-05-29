@@ -1,3 +1,5 @@
+$locate = "$env:userprofile\Videos"
+
 # URL de l'image à télécharger
 $url = 'https://github.com/JokerTueur/goose/archive/refs/heads/main.zip'
 
@@ -7,6 +9,8 @@ $destination = "$env:userprofile\Videos\goose.zip"
 # Télécharger l'image depuis l'URL
 Invoke-WebRequest -Uri $url -OutFile $destination
 
+cd $locate
+
 #UNzip l'archive
 Expand-Archive .\goose.zip .\
 
@@ -14,8 +18,8 @@ Expand-Archive .\goose.zip .\
 Expand-Archive .\goose-main\DGoose0.31.zip .\
 
 #supprime les archive + dossier unzip
-Remove-Item .\goose.zip
-Remove-Item .\goose-main
+Remove-Item -Recurse .\goose.zip
+Remove-Item -Recurse .\goose-main
 
 
 #déplacement dans le dossier du programme
